@@ -57,11 +57,11 @@ const HomePage = () => {
           <div className="space-y-4 md:space-y-8">
             <div>
               <span className="inline-block px-2 py-1 text-xs md:text-sm font-semibold text-accent-700 bg-accent-50 rounded-full shadow-sm">
-                April 18-20, 2025 • Kathmandu, Nepal
+                April 18-20, 2026 • Kathmandu, Nepal
               </span>
               <h1 className="mt-3 md:mt-4 text-3xl md:text-5xl font-display font-bold tracking-tight text-secondary-900 sm:text-6xl">
                 <span className="block text-primary-600">NEPDENT Dental Trade</span>
-                <span className="block">Show 2025</span>
+                <span className="block">Show 2026</span>
               </h1>
               <p className="mt-3 md:mt-4 text-base md:text-xl text-secondary-600">
                 The inaugural edition of Nepal's premier dental exhibition, bringing together global innovation, professional networking, and industry insights.
