@@ -1,6 +1,7 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, PDFViewer, Image } from '@react-pdf/renderer';
 import QRCode from 'qrcode';
+import eventConfig from '../config/eventConfig';
 
 const styles = StyleSheet.create({
   page: {
@@ -99,7 +100,7 @@ const BadgePDF = ({ data }) => {
         <View style={styles.section}>
           <View style={styles.header}>
             <View style={styles.headerGradient} />
-            <Text style={styles.title}>Dental Trade Show 2025</Text>
+            <Text style={styles.title}>{eventConfig.name}</Text>
             <Text style={styles.subtitle}>Attendee Badge</Text>
           </View>
 
@@ -126,7 +127,7 @@ const BadgePDF = ({ data }) => {
           </View>
 
           <View style={styles.footer}>
-            <Text>April 18-20, 2025 • Kathmandu, Nepal</Text>
+            <Text>{eventConfig.dates} • {eventConfig.location}</Text>
             <Text>Powered by NepDent</Text>
           </View>
         </View>

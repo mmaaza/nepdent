@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { collection, doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import CountdownTimer from '../components/CountdownTimer';
+import eventConfig from '../config/eventConfig';
+import bannerImage from '../assets/banner.jpeg';
 
 const HomePage = () => {  
   const [content, setContent] = useState({
@@ -56,18 +58,18 @@ const HomePage = () => {
         <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
           <div className="space-y-4 md:space-y-8">
             <div>
-              <span className="inline-block px-2 py-1 text-xs md:text-sm font-semibold text-accent-700 bg-accent-50 rounded-full shadow-sm">
-                April 18-20, 2026 • Kathmandu, Nepal
+              <span className="inline-block px-3 py-1.5 text-xs md:text-sm font-semibold text-accent-700 bg-accent-50 rounded-full shadow-sm border border-accent-100">
+                {eventConfig.dates} • {eventConfig.location}
               </span>
               <h1 className="mt-3 md:mt-4 text-3xl md:text-5xl font-display font-bold tracking-tight text-secondary-900 sm:text-6xl">
                 <span className="block text-primary-600">NEPDENT Dental Trade</span>
-                <span className="block">Show 2026</span>
+                <span className="block">Show {eventConfig.year}</span>
               </h1>
               <p className="mt-3 md:mt-4 text-base md:text-xl text-secondary-600">
-                The inaugural edition of Nepal's premier dental exhibition, bringing together global innovation, professional networking, and industry insights.
+                Nepal's premier international dental exhibition — bringing together global innovation, professional networking, and industry insights.
               </p>
             </div>
-            
+
             <div className="flex flex-wrap gap-3 md:gap-4">
               <Link to="/register" className="inline-flex items-center px-4 py-2 md:px-6 md:py-3 text-sm md:text-lg font-medium rounded-xl bg-primary-600 text-white shadow-lg hover:bg-primary-700 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                 Register Now
@@ -77,14 +79,13 @@ const HomePage = () => {
               </Link>
             </div>
           </div>
-          
-          <div className="relative mt-6 md:mt-0">
-            <div className="absolute inset-0 bg-accent-100 transform rotate-3 rounded-2xl"></div>
-            <div className="relative rounded-2xl overflow-hidden shadow-card">
-              <img 
-                src="https://res.cloudinary.com/dy3ceb1zw/image/upload/v1742810563/WhatsApp_Image_2025-03-23_at_3.12.08_PM_gwemkm.jpg" 
-                alt="Dental Exhibition" 
-                className="w-full h-64 md:h-96 object-cover"
+
+          <div className="relative mt-6 md:mt-0 flex justify-center">
+            <div className="rounded-2xl overflow-hidden shadow-xl max-w-xs md:max-w-sm">
+              <img
+                src={bannerImage}
+                alt="NEPDENT International Dental Trade Show Banner"
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -111,7 +112,7 @@ const HomePage = () => {
       <div className="max-w-7xl mx-auto px-4 py-10 md:py-16 sm:px-6 lg:px-8">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-3 md:mb-4 font-display">Featured Exhibitors</h2>
-          <p className="max-w-2xl mx-auto text-sm md:text-base text-secondary-600">Meet our esteemed exhibitors at DTS Nepal 2025</p>
+          <p className="max-w-2xl mx-auto text-sm md:text-base text-secondary-600">Meet our esteemed exhibitors at DTS Nepal {eventConfig.year}</p>
         </div>
         
         <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -275,7 +276,7 @@ const HomePage = () => {
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6 font-display">Be Part of Dental History in Nepal</h2>
-          <p className="text-base md:text-xl text-primary-100 mb-6 md:mb-8">April 18-20, 2025 • Kathmandu, Nepal</p>
+          <p className="text-base md:text-xl text-primary-100 mb-6 md:mb-8">{eventConfig.dates} • {eventConfig.location}</p>
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
             <Link to="/register" className="inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-4 text-base md:text-lg font-medium rounded-xl bg-white text-primary-700 shadow-lg hover:bg-primary-50 transition-colors">
               Register Now
@@ -298,7 +299,7 @@ const HomePage = () => {
                 </div>
                 <div>
                   <dt className="font-semibold text-secondary-900">Date</dt>
-                  <dd className="text-sm md:text-base text-secondary-600">April 18-20, 2025</dd>
+                  <dd className="text-sm md:text-base text-secondary-600">{eventConfig.dates}</dd>
                 </div>
               </div>
               

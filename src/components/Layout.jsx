@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import Header from './Header';
+import eventConfig from '../config/eventConfig';
 
 const Layout = () => {
   return (
@@ -11,7 +12,7 @@ const Layout = () => {
       </main>
       <footer className="bg-gray-800 text-white p-4 print:hidden mt-auto">
         <div className="container mx-auto">
-          <p className="text-center">© {new Date().getFullYear()} Dental Trade Show 2025. All rights reserved.</p>
+          <p className="text-center">© {new Date().getFullYear()} {eventConfig.name}. All rights reserved.</p>
         </div>
       </footer>
     </div>

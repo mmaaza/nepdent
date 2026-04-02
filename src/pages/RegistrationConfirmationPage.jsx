@@ -5,6 +5,7 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 import fullLogo from "../assets/full-logo.png";
 import procareLogo from "../assets/procare-logo.png";
 import BadgePDF from "../components/BadgePDF";
+import eventConfig from "../config/eventConfig";
 
 const RegistrationConfirmationPage = () => {
   const location = useLocation();
@@ -72,7 +73,7 @@ const RegistrationConfirmationPage = () => {
           </h1>
 
           <p className="text-secondary-600 mb-8">
-            Thank you for registering for NEPDENT DTS 2025. Your registration
+            Thank you for registering for {eventConfig.shortName}. Your registration
             has been confirmed.
           </p>
 

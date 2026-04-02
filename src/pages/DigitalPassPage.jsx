@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { db } from '../../firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { QRCodeSVG } from 'qrcode.react';
+import eventConfig from '../config/eventConfig';
 
 const DigitalPassPage = () => {
   const location = useLocation();
@@ -110,13 +111,13 @@ const DigitalPassPage = () => {
         <div className="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 border border-secondary-100 print:border-neutral-700 print:shadow-none">
           {/* Event name at the top */}
           <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white p-4 sm:p-6 text-center">
-            <h2 className="text-xl font-display font-bold print:text-black">Dental Trade Show 2025</h2>
+            <h2 className="text-xl font-display font-bold print:text-black">{eventConfig.name}</h2>
             <div className="flex flex-col sm:flex-row items-center justify-center mt-2 text-sm text-primary-100 sm:space-x-4 space-y-2 sm:space-y-0">
               <div className="flex items-center print:text-neutral-700">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <span>April 18-20, 2025</span>
+                <span>{eventConfig.dates}</span>
               </div>
               <div className="flex items-center print:text-neutral-700">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -214,7 +215,7 @@ const DigitalPassPage = () => {
             <p>• Your digital pass can be saved by printing it as a PDF or as a physical copy</p>
             <p>• This pass gives you access to all standard conference areas</p>
             <p>• Remember to bring a valid ID that matches the information on this pass</p>
-            <p>• For any issues with your pass, contact support@nepdent2025.com</p>
+            <p>• For any issues with your pass, contact {eventConfig.supportEmail}</p>
           </div>
         </div>
       </div>

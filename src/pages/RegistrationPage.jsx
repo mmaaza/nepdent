@@ -5,6 +5,7 @@ import { db } from '../../firebase';
 import { collection, addDoc, updateDoc, doc, getDoc, query, where, getDocs } from 'firebase/firestore'; 'firebase/firestore';
 import { QRCodeSVG } from 'qrcode.react'; // Fix: correct import for qrcode.react
 import { LockIcon } from 'lucide-react';
+import eventConfig from '../config/eventConfig';
 
 // Countries data
 const countries = [
@@ -292,7 +293,7 @@ const RegistrationPage = () => {
             <LockIcon className="h-16 w-16 mx-auto text-secondary-400" />
             <h2 className="mt-4 text-2xl font-bold text-secondary-900">Registration Closed</h2>
             <p className="mt-2 text-secondary-600">
-              Registration for NEPDENT DTS 2025 is currently closed. Please check back later or contact the organizers for more information.
+              Registration for {eventConfig.shortName} is currently closed. Please check back later or contact the organizers for more information.
             </p>
           </div>
         </div>
@@ -310,10 +311,10 @@ const RegistrationPage = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10">
           <h1 className="font-display text-4xl md:text-5xl font-bold text-secondary-900 mb-2">
-            Register for NEPDENT DTS 2025
+            Register for {eventConfig.shortName}
           </h1>
           <p className="text-secondary-600 text-lg max-w-2xl mx-auto">
-            Join us in Kathmandu on April 9,10 & 11 2026 for the premier dental event in Nepal
+            Join us in {eventConfig.location} on {eventConfig.dates} for the premier dental event in Nepal
           </p>
         </div>
 

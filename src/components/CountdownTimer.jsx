@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import eventConfig from '../config/eventConfig';
 
 const CountdownTimer = () => {
   // Countdown timer logic
@@ -10,8 +11,7 @@ const CountdownTimer = () => {
   });
 
   useEffect(() => {
-    // Set event date - March 10, 2025
-    const eventDate = new Date('2025-04-18T09:00:00').getTime();
+    const eventDate = new Date(eventConfig.startDate).getTime();
     
     const timer = setInterval(() => {
       const now = new Date().getTime();
