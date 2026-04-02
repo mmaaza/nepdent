@@ -313,7 +313,7 @@ const RegistrationPage = () => {
             Register for NEPDENT DTS 2025
           </h1>
           <p className="text-secondary-600 text-lg max-w-2xl mx-auto">
-            Join us in Kathmandu on April 18-20, 2025 for the premier dental event in Nepal
+            Join us in Kathmandu on April 9,10 & 11 2026 for the premier dental event in Nepal
           </p>
         </div>
 
