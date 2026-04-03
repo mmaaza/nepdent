@@ -1,0 +1,11 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/procaren/public_html
+    - export PATH=/opt/alt/alt-nodejs20/root/usr/bin:$PATH
+    - node --version
+    - npm --version
+    - npm install
+    - npm run build
+    - rm -rf $DEPLOYPATH/*
+    - cp -r dist/. $DEPLOYPATH/
