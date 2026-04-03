@@ -1,0 +1,15 @@
+RewriteEngine On
+
+RewriteBase /
+
+# Ensure direct access to index.html works
+RewriteRule ^index\.html$ - [L]
+
+# Redirect all non-existing files and directories to index.html (React SPA handling)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
